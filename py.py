@@ -9,6 +9,7 @@ print(x+y)
 
 def lello(first, last):
     print(f"i M {first} {last} THE BEST ")
+    print(" i", " M", first, last, " THE", " BEST ")
 
 
 course = "                 gupta                "
@@ -130,7 +131,7 @@ numbers.sort()
 print(f"\nsorted numbers = {numbers}")
 numbers = [90, 56, 78, 56]
 numbers.sort(reverse=True)
-print(f"sorted numbers inrerverse = {numbers}")
+print(f"sorted numbers in rerverse = {numbers}")
 # if we dont want to change original list then
 numbers = [90, 56, 78, 56]
 newlist = sorted(numbers)
@@ -160,6 +161,7 @@ items = [
 # method 2 lamda function lambda parameter:expression
 items.sort(key=lambda item: item[1])
 print(f"method 2 {items}")
+
 # if we only want price we create new list by
 items = [
     ("product3", 12),
@@ -168,8 +170,10 @@ items = [
 ]  # map(function,iterable)
 price = list(map(lambda item: item[1], items))
 print(f"prices={price}")
+
 filtered = list(filter(lambda item: item[1] >= 10, items))
 print(f"filtered list ={filtered}")
+
 filtered.sort(key=lambda item: item[1])
 print(f"filtered and arranged ={filtered}")
 
@@ -187,4 +191,5 @@ print(f"using comprehension price={price}filtered={filtered}")
 # zip function-make tuples of given list
 list1 = [1, 2, 3, 4, 6, 7]
 list2 = [10, 20, 30, 40]
-zippedlist = (list(zip("abcd", list1, list2, list1)))
+zippedlist = (list(zip("abcde", list1, list2, list1)))
+print(zippedlist)
