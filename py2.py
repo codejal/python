@@ -81,6 +81,6 @@ print(point.get("a", 0))  # therefore see for a if not fount return 0
 del point["x"]
 print(point)
 for key in point:
-    print(key, point[key])
+    print(key)
 for key, value in point.items():
     print(key, value)
