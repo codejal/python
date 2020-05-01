@@ -144,9 +144,10 @@ items = [
     ("product1", 10)
 ]
 
-
 # here our basic sorting technique will not work therefore
 # method 1
+
+
 def sort_item(item):
     return item[1]
 
