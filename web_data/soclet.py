@@ -2,6 +2,7 @@ import socket
 mysoc = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 mysoc.connect(('data.pr4e.org', 80))
 cm = 'GET http://data.pr4e.org/romeo.txt HTTP/1.0\r\n\r\n'.encode()
+
 mysoc.send(cm)
 count = 0
 while True:
