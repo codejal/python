@@ -1,0 +1,2 @@
+# ascii
+print(ord('s'))
