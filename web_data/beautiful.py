@@ -22,7 +22,9 @@ The file is a table of names and comment counts. You can ignore most of the
 <tr><td>Kenzie</td><td><span class="comments">88</span></td></tr>
 <tr><td>Hubert</td><td><span class="comments">87</span></td></tr>
 You are to find all the <span> tags in the file and pull out the numbers
-from the tag and sum the numbers.'''
+from the tag and sum the numbers.
+***************************************************************
+'''
 
 import urllib.error
 import urllib.parse
@@ -34,7 +36,9 @@ req = urllib.request.urlopen(url).read()
 soup = BeautifulSoup(req, 'lxml')
 # print(soup.prettify)
 # method1
-'''table = [i for i in soup.find_all('span', class_="comments")]
+'''
+---------------------------------------------------------------
+table = [i for i in soup.find_all('span', class_="comments")]
 print(table)
 tabl = list()
 for i in range(len(table)):
@@ -46,10 +50,15 @@ for i in range(len(tabl)):
     number = int(tabl[i])
     total += number
 print(total)
-print('-'*100)'''
+print('-'*100)
+---------------------------------------------------------------
+'''
 
 # method2
-'''total = 0
+
+'''
+---------------------------------------------------------------
+total = 0
 number = 0
 for data in soup.find_all('span', class_='comments'):
     print(data)
@@ -59,9 +68,12 @@ for data in soup.find_all('span', class_='comments'):
     # print(type(number))----string or text are equal
     total += int(number)
 print(total)
-print('-'*100)'''
+print('-'*100)
+---------------------------------------------------------------
+'''
 
 
+'''---------------------------------------------------------------'''
 # method3
 total = 0
 number = 0
@@ -74,3 +86,4 @@ for data in soup.find_all('span', class_='comments'):
     total += int(number[0])
 print(total)
 print('-'*100)
+'''---------------------------------------------------------------'''

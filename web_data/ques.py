@@ -21,26 +21,26 @@ import urllib.error
 import urllib.parse
 import urllib.request
 import bs4
-import re
 positions = 18
 counts = 7
-z = url = "http://py4e-data.dr-chuck.net/known_by_Colm.html"
+z = "http://py4e-data.dr-chuck.net/known_by_Colm.html"
 count = 0
 for num in range(counts):
     url = z
     req = urllib.request.urlopen(url).read()
     soup = bs4.BeautifulSoup(req, 'lxml')
-    x = soup.find_all('a')
-    print(x)
-    for y in x:
-        print(y)
-        main = y.text
-        print(main)
-        y = y.get('href')
-        print(y)
+    single_page = soup.find_all('a')
+    count = 0
+    print(single_page)
+    for a_tag in single_page:
+        print(a_tag)
+        name = a_tag.text
+        print(name)
+        link = a_tag.get('href')
+        print(link)
         count += 1
         if count == positions:
-            z = y
+            z = link
             break
     print('-'*100)
-print(main)
+print(name)
