@@ -1,6 +1,9 @@
 import socket
+'''socket creation->connect to host,port->send command->recv data->decode->close'''
+
 mysoc = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 mysoc.connect(('data.pr4e.org', 80))
+# till now we have made a call but not data transfer
 cm = 'GET http://data.pr4e.org/romeo.txt HTTP/1.0\r\n\r\n'.encode()
 
 mysoc.send(cm)

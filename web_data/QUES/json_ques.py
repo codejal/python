@@ -21,7 +21,9 @@ import urllib.error
 url = 'http://py4e-data.dr-chuck.net/comments_429310.json'
 uh = urllib.request.urlopen(url)
 data = uh.read().decode()
+print(data)
 jso = json.loads(data)
+print(jso)
 total = 0
 length = len(jso['comments'])
 for i in range(length):

@@ -31,13 +31,12 @@ import urllib.parse
 import urllib.request
 from bs4 import BeautifulSoup
 import re
-url = "  http://py4e-data.dr-chuck.net/comments_429307.html"
+url = "http://py4e-data.dr-chuck.net/comments_429307.html"
 req = urllib.request.urlopen(url).read()
-soup = BeautifulSoup(req, 'lxml')
-# print(soup.prettify)
+soup = BeautifulSoup(req, 'html.parser')
+print(soup.prettify)
 # method1
-'''
----------------------------------------------------------------
+
 table = [i for i in soup.find_all('span', class_="comments")]
 print(table)
 tabl = list()
@@ -51,39 +50,32 @@ for i in range(len(tabl)):
     total += number
 print(total)
 print('-'*100)
----------------------------------------------------------------
-'''
+
 
 # method2
 
-'''
----------------------------------------------------------------
 total = 0
 number = 0
 for data in soup.find_all('span', class_='comments'):
     print(data)
-    print(type(data))
+    # print(type(data))
     number = data.string  # ==number=data.text
     print(number)
     # print(type(number))----string or text are equal
     total += int(number)
 print(total)
 print('-'*100)
----------------------------------------------------------------
-'''
 
 
-'''---------------------------------------------------------------'''
 # method3
 total = 0
 number = 0
 for data in soup.find_all('span', class_='comments'):
     data = str(data)
     print(data)
-    print(type(data))
+    # print(type(data))
     number = re.findall('>([0-9]+)<', data)
     print(number)
     total += int(number[0])
 print(total)
 print('-'*100)
-'''---------------------------------------------------------------'''
